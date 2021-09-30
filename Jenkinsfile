@@ -2,19 +2,24 @@ pipeline {
   agent any
   stages {
 
-  stage('Maven Installation')
+  stage('Maven')
     {
     steps{
         echo "Building the checked out project...";
         bat "mvn clean install";
         }
     }
-    stage('Deploy')
+    stage('Compile')
     {
-      steps{
-        echo "Deploying Project";
-
+    steps{
+        echo "Compiling Project";
+         }
     }
+  stage('Deploy')
+    {
+    steps{
+        echo "Deploying Project";
+         }
     }
 }
 }
